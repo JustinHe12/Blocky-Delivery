@@ -9,7 +9,6 @@
 
 [node name="Player" type="CharacterBody3D"]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10191, 0)
 script = ExtResource("1_f6swd")
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="."]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://csy8rotcnemjv"]
+
+[ext_resource type="Script" path="res://addons/srcoder_fps_controller/assets/scripts/portal.gd" id="1_iydip"]
+[ext_resource type="Texture2D" uid="uid://7t8jfoh5wwt8" path="res://icon.svg" id="1_meyby"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_j1fxy"]
+
+[node name="portal" type="Area3D"]
+script = ExtResource("1_iydip")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_j1fxy")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_meyby")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

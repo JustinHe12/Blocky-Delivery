@@ -1,0 +1,173 @@
+[gd_scene load_steps=7 format=3 uid="uid://cv5c1ic7aoxe8"]
+
+[ext_resource type="Material" uid="uid://cdnbyynlgoq4c" path="res://materials/grid1.material" id="1_wce08"]
+[ext_resource type="PackedScene" uid="uid://dy26xc485fhld" path="res://addons/srcoder_fps_controller/player.tscn" id="2_yedv8"]
+[ext_resource type="PackedScene" uid="uid://xvirvni0l0oy" path="res://addons/srcoder_fps_controller/mouse_lock.tscn" id="3_27e05"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qjfgd"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_goqhy"]
+sky_material = SubResource("ProceduralSkyMaterial_qjfgd")
+
+[sub_resource type="Environment" id="Environment_g4yij"]
+background_mode = 2
+sky = SubResource("Sky_goqhy")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Level 3" type="Node3D"]
+
+[node name="Map" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.874081, 0, -62.461)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1.54362, 0.903337, 0.400365, 61.9901)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(5, 1, 3)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Map"]
+transform = Transform3D(0.0205272, 0, 0, 0, 0.0416561, 0, 0, 0, 0.0466238, 0.940605, 0.400365, 54.9484)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Map"]
+transform = Transform3D(0.0205272, 0, 0, 0, 0.0416561, 0, 0, 0, 0.0466238, 0.940605, 0.400365, 51.5407)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Map"]
+transform = Transform3D(0.0205272, 0, 0, 0, 0.0416561, 0, 0, 0, 0.0466238, 0.333706, 0.400365, 50.2659)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Map"]
+transform = Transform3D(0.0205272, 0, 0, 0, 0.0416561, 0, 0, 0, 0.0466238, -1.03773, 0.400365, 47.9848)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Map"]
+transform = Transform3D(0.0205272, 0, 0, 0, 0.0416561, 0, 0, 0, 0.0466238, 0.566552, 0.400365, 46.816)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.020288, 0.00104996, -0.00699932, 0.000361927, 0.0415942, 0.00240437, 0.00310371, 0.00201289, -0.0460327, -0.932371, 0.649941, 36.8724)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.020288, 0.00104996, -0.00699932, 0.000361927, 0.0415942, 0.00240437, 0.00310371, 0.00201289, -0.0460327, -0.42079, 0.474205, 40.2369)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.020288, 0.00104996, -0.00699932, 0.000361927, 0.0415942, 0.00240437, 0.00310371, 0.00201289, -0.0460327, 0.370413, 0.397764, 41.4038)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.020288, 0.00104996, -0.00699932, 0.000361927, 0.0415942, 0.00240437, 0.00310371, 0.00201289, -0.0460327, 2.0683, 0.255952, 43.4485)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.020288, 0.00104996, -0.00699932, 0.000361927, 0.0415942, 0.00240437, 0.00310371, 0.00201289, -0.0460327, 0.658185, 0.223962, 44.8451)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1.54362, 0.903337, 0.400365, 28.7219)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(5, 1, 7.80554)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Map"]
+transform = Transform3D(0.0205272, 0, 0, 0, 0.0416561, 0, 0, 0, 0.0466238, 1.1097, 2.10406, 22.0126)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Map"]
+transform = Transform3D(0.0205272, 0, 0, 0, 0.0416561, 0, 0, 0, 0.0466238, 1.1097, 3.06699, 18.6049)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="Map"]
+transform = Transform3D(0.0205272, 0, 0, 0, 0.0416561, 0, 0, 0, 0.0466238, 0.174944, 1.53526, 17.3101)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="Map"]
+transform = Transform3D(0.0205272, 0, 0, 0, 0.0416561, 0, 0, 0, 0.0466238, -0.868636, 1.8135, 15.0491)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="Map"]
+transform = Transform3D(0.0205272, 0, 0, 0, 0.0416561, 0, 0, 0, 0.0466238, 0.958858, 2.38507, 13.8802)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.020288, 0.00104996, -0.00699932, 0.000361927, 0.0415942, 0.00240437, 0.00310371, 0.00201289, -0.0460327, -0.763277, 0.615599, 3.93659)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.020288, 0.00104996, -0.00699932, 0.000361927, 0.0415942, 0.00240437, 0.00310371, 0.00201289, -0.0460327, 0.057857, 3.05375, 7.30112)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.020288, 0.00104996, -0.00699932, 0.000361927, 0.0415942, 0.00240437, 0.00310371, 0.00201289, -0.0460327, 1.02576, 2.72033, 8.46799)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.020288, 0.00104996, -0.00699932, 0.000361927, 0.0415942, 0.00240437, 0.00310371, 0.00201289, -0.0460327, 2.2374, 2.74816, 10.5127)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.020288, 0.00104996, -0.00699932, 0.000361927, 0.0415942, 0.00240437, 0.00310371, 0.00201289, -0.0460327, 1.38107, 1.92384, 11.8906)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(1.70361, 1, 0.775024)
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1.54362, 0.0725632, 0.400365, 0.039299)
+material_override = ExtResource("1_wce08")
+use_collision = true
+size = Vector3(5, 1, 3)
+
+[node name="Player" parent="." instance=ExtResource("2_yedv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0536314, 2.32518, 0.0273578)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g4yij")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0.906762, 0, 62.2775)
+shadow_enabled = true
+
+[node name="MouseLock" parent="." instance=ExtResource("3_27e05")]

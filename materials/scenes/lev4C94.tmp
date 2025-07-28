@@ -1,20 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxfhka8e0feiu"]
+[gd_scene load_steps=7 format=3 uid="uid://dxfhka8e0feiu"]
 
 [ext_resource type="Material" uid="uid://cdnbyynlgoq4c" path="res://materials/grid1.material" id="1_id32k"]
 [ext_resource type="PackedScene" uid="uid://dy26xc485fhld" path="res://addons/srcoder_fps_controller/player.tscn" id="2_pao11"]
 [ext_resource type="PackedScene" uid="uid://xvirvni0l0oy" path="res://addons/srcoder_fps_controller/mouse_lock.tscn" id="3_ppb6v"]
-[ext_resource type="PackedScene" uid="uid://csy8rotcnemjv" path="res://addons/srcoder_fps_controller/assets/portal.tscn" id="4_3ighf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oi01p"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_p2bta"]
+[sub_resource type="Sky" id="Sky_i01fw"]
 sky_material = SubResource("ProceduralSkyMaterial_oi01p")
 
 [sub_resource type="Environment" id="Environment_60gy5"]
 background_mode = 2
-sky = SubResource("Sky_p2bta")
+sky = SubResource("Sky_i01fw")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -29,40 +28,25 @@ shadow_enabled = true
 
 [node name="Map" type="Node3D" parent="."]
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.96, -3, 8, 1.44)
-material_override = ExtResource("1_id32k")
-use_collision = true
-size = Vector3(5, 1, 1)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, -0.710199, 0, 0.258819, 2.6505, -8, 11, -2.944)
-material_override = ExtResource("1_id32k")
-use_collision = true
-size = Vector3(5, 1, 1)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Map"]
-transform = Transform3D(5.96046e-08, 0, -0.307328, 0, 6.66, 0, 1, 0, 7.45058e-09, -9, 19, 0.2624)
-material_override = ExtResource("1_id32k")
-use_collision = true
-size = Vector3(5, 1, 1)
-
 [node name="CSGBox3D" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 9.53674e-07, 2.38419e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 0, 0)
 material_override = ExtResource("1_id32k")
 use_collision = true
 size = Vector3(25, 1, 23)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.8416, -5, 24, -4.7376)
+[node name="CSGBox3D2" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.710199, 0, 0.258819, 2.6505, -8, 9, -2.944)
 material_override = ExtResource("1_id32k")
 use_collision = true
 size = Vector3(5, 1, 1)
 
-[node name="MouseLock" parent="." instance=ExtResource("3_ppb6v")]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.96, -3, 6, 1.44)
+material_override = ExtResource("1_id32k")
+use_collision = true
+size = Vector3(5, 1, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_pao11")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
 
-[node name="portal" parent="." instance=ExtResource("4_3ighf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+[node name="MouseLock" parent="." instance=ExtResource("3_ppb6v")]
