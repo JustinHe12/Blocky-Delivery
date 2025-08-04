@@ -10,6 +10,12 @@
 [node name="Player" type="CharacterBody3D"]
 physics_interpolation_mode = 1
 script = ExtResource("1_f6swd")
+speed = null
+jump_velocity = null
+mouse_sensitivity = null
+ground_acceleration = null
+air_acceleration = null
+gravity = null
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="."]
 material_override = ExtResource("2_fs15m")
@@ -24,3 +30,5 @@ shape = SubResource("CapsuleShape3D_ha1jo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49559, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+
+[connection signal="child_entered_tree" from="CollisionShape3D" to="." method="_on_collision_shape_3d_child_entered_tree"]

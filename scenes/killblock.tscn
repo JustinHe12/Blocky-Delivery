@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://78tx4krbnsyv"]
+
+[ext_resource type="Texture2D" uid="uid://cf5unjjwrps8k" path="res://materials/texture_08.png" id="1_01pay"]
+[ext_resource type="Script" path="res://killblock.gd" id="1_t4kp7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6du88"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8dltf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u35cp"]
+albedo_texture = ExtResource("1_01pay")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_t4kp7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_6du88")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+mesh = SubResource("BoxMesh_8dltf")
+material = SubResource("StandardMaterial3D_u35cp")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

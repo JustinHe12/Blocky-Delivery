@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dcnkbgmxo4nci"]
 
 [ext_resource type="PackedScene" uid="uid://xvirvni0l0oy" path="res://addons/srcoder_fps_controller/mouse_lock.tscn" id="1_0j7bi"]
-[ext_resource type="PackedScene" uid="uid://dy26xc485fhld" path="res://addons/srcoder_fps_controller/player.tscn" id="2_n3vm8"]
+[ext_resource type="PackedScene" uid="uid://dy26xc485fhld" path="res://scenes/player.tscn" id="2_n3vm8"]
 [ext_resource type="Material" uid="uid://dufa2xscu08tg" path="res://addons/srcoder_fps_controller/assets/materials/grid.material" id="3_2526v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m8l4c"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgmdm2e84n161"]
+[gd_scene load_steps=8 format=3 uid="uid://dgmdm2e84n161"]
 
-[ext_resource type="Material" uid="uid://cdnbyynlgoq4c" path="res://materials/grid1.material" id="1_npwn3"]
-[ext_resource type="PackedScene" uid="uid://dy26xc485fhld" path="res://addons/srcoder_fps_controller/player.tscn" id="2_k73o5"]
-[ext_resource type="PackedScene" uid="uid://xvirvni0l0oy" path="res://addons/srcoder_fps_controller/mouse_lock.tscn" id="3_mbjpi"]
+[ext_resource type="Material" uid="uid://cdnbyynlgoq4c" path="res://materials/grid1.material" id="1_5gul8"]
+[ext_resource type="PackedScene" uid="uid://dy26xc485fhld" path="res://scenes/player.tscn" id="2_nwkhs"]
+[ext_resource type="PackedScene" uid="uid://xvirvni0l0oy" path="res://addons/srcoder_fps_controller/mouse_lock.tscn" id="3_a81iv"]
+[ext_resource type="PackedScene" uid="uid://csy8rotcnemjv" path="res://scenes/portal.tscn" id="4_gx6cf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ncj4a"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -23,48 +24,54 @@ glow_enabled = true
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Map"]
 transform = Transform3D(5.16191e-08, -4.19516, -0.226231, 2.98023e-08, 7.26623, -0.130614, 1, 0, 6.33299e-09, 3.9807, 4, 0.264224)
-material_override = ExtResource("1_npwn3")
+material_override = ExtResource("1_5gul8")
 use_collision = true
 size = Vector3(5, 1, 1)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Map"]
 transform = Transform3D(-5.16191e-08, -4.19516, 0.226231, 2.98023e-08, -7.26623, -0.130614, 1, -1.39058e-14, 6.33299e-09, 0, 12, 0.2624)
-material_override = ExtResource("1_npwn3")
+material_override = ExtResource("1_5gul8")
 use_collision = true
 size = Vector3(5, 1, 1)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1.54362, 7.20187, 16.3066, 0.433797)
-material_override = ExtResource("1_npwn3")
+material_override = ExtResource("1_5gul8")
 use_collision = true
 size = Vector3(5, 1, 3)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 9.53674e-07, 2.38419e-07)
-material_override = ExtResource("1_npwn3")
+material_override = ExtResource("1_5gul8")
 use_collision = true
 size = Vector3(25, 1, 23)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Map"]
 transform = Transform3D(-5.89767e-08, 0, 0.269583, 0, 8.76819, 0, -1.34923, 0, -1.17839e-08, 14.8645, 19.7545, -6.11265)
-material_override = ExtResource("1_npwn3")
+material_override = ExtResource("1_5gul8")
 use_collision = true
 size = Vector3(5, 0.75, 1)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Map"]
 transform = Transform3D(-5.89767e-08, 0, 0.269583, 0, 8.76819, 0, -1.34923, 0, -1.17839e-08, 9.64323, 19.7545, -20.0428)
-material_override = ExtResource("1_npwn3")
+material_override = ExtResource("1_5gul8")
 use_collision = true
 size = Vector3(12, 0.75, 1)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Map"]
 transform = Transform3D(-1.34923, 7.66539e-07, -1.03018e-15, 0, -3.8327e-07, -0.269583, -1.17953e-07, -8.76819, 1.17839e-08, 14.9779, 18.6834, -46.2617)
-material_override = ExtResource("1_npwn3")
+material_override = ExtResource("1_5gul8")
 use_collision = true
 size = Vector3(4.77539, 3.17209, 1)
 
-[node name="Player" parent="." instance=ExtResource("2_k73o5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+[node name="Player" parent="." instance=ExtResource("2_nwkhs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.26684, 0)
+speed = null
+jump_velocity = null
+mouse_sensitivity = null
+ground_acceleration = null
+air_acceleration = null
+gravity = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ao2u8")
@@ -73,4 +80,8 @@ environment = SubResource("Environment_ao2u8")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="MouseLock" parent="." instance=ExtResource("3_mbjpi")]
+[node name="MouseLock" parent="." instance=ExtResource("3_a81iv")]
+
+[node name="portal" parent="." instance=ExtResource("4_gx6cf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9615, 21.6702, -56.4778)
+next_level = "level_3"

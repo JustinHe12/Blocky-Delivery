@@ -45,7 +45,7 @@ func _physics_process(delta):
 		position = StartPosition
 	
 	# Handle Jump and double jump.
-	print(doublejump)
+
 	if is_on_floor() or is_on_wall():
 		ground_acceleration = 3.5
 		air_acceleration = 0.1
@@ -107,3 +107,7 @@ func _input(event: InputEvent):
 	if event is InputEventMouseMotion:
 		mouse_motion = event.relative
 		
+
+
+func _on_collision_shape_3d_child_entered_tree(node):
+	print(body.name)
