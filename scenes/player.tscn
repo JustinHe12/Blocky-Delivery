@@ -10,12 +10,6 @@
 [node name="Player" type="CharacterBody3D"]
 physics_interpolation_mode = 1
 script = ExtResource("1_f6swd")
-speed = null
-jump_velocity = null
-mouse_sensitivity = null
-ground_acceleration = null
-air_acceleration = null
-gravity = null
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="."]
 material_override = ExtResource("2_fs15m")

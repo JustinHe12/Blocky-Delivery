@@ -96,9 +96,6 @@ func _physics_process(delta):
 	#reset it
 	mouse_motion = Vector2.ZERO
 	
-
-#velocity.x = target_velocity.x * speed
-			#velocity.z = target_velocity.z * speed
 	
 #handle and store mouse motion
 
@@ -107,7 +104,3 @@ func _input(event: InputEvent):
 	if event is InputEventMouseMotion:
 		mouse_motion = event.relative
 		
-
-
-func _on_collision_shape_3d_child_entered_tree(node):
-	print(body.name)

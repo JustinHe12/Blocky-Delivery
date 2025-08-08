@@ -66,12 +66,12 @@ size = Vector3(4.77539, 3.17209, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_nwkhs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.26684, 0)
-speed = null
-jump_velocity = null
-mouse_sensitivity = null
-ground_acceleration = null
-air_acceleration = null
-gravity = null
+speed = 5.0
+jump_velocity = 7.0
+mouse_sensitivity = 2.0
+ground_acceleration = 3.5
+air_acceleration = 0.5
+gravity = 15.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ao2u8")
