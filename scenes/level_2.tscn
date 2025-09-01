@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgmdm2e84n161"]
+[gd_scene load_steps=9 format=3 uid="uid://dgmdm2e84n161"]
 
 [ext_resource type="Material" uid="uid://cdnbyynlgoq4c" path="res://materials/grid1.material" id="1_5gul8"]
 [ext_resource type="PackedScene" uid="uid://dy26xc485fhld" path="res://scenes/player.tscn" id="2_nwkhs"]
 [ext_resource type="PackedScene" uid="uid://xvirvni0l0oy" path="res://addons/srcoder_fps_controller/mouse_lock.tscn" id="3_a81iv"]
 [ext_resource type="PackedScene" uid="uid://csy8rotcnemjv" path="res://scenes/portal.tscn" id="4_gx6cf"]
+[ext_resource type="PackedScene" uid="uid://78tx4krbnsyv" path="res://scenes/killblock.tscn" id="5_gs4fi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ncj4a"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -65,13 +66,7 @@ use_collision = true
 size = Vector3(4.77539, 3.17209, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_nwkhs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.26684, 0)
-speed = 5.0
-jump_velocity = 7.0
-mouse_sensitivity = 2.0
-ground_acceleration = 3.5
-air_acceleration = 0.5
-gravity = 15.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ao2u8")
@@ -85,3 +80,12 @@ shadow_enabled = true
 [node name="portal" parent="." instance=ExtResource("4_gx6cf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9615, 21.6702, -56.4778)
 next_level = "level_3"
+
+[node name="killblock" parent="." instance=ExtResource("5_gs4fi")]
+transform = Transform3D(-4.38747, -0.145636, 0.00759697, 7.4948, -0.0852533, -0.0315296, 0.054662, -0.000320629, 4.93286, 4.22844, 3.89805, 0.261989)
+
+[node name="killblock2" parent="." instance=ExtResource("5_gs4fi")]
+transform = Transform3D(7.78435, 0, 0, 0, 6.02454, 0, 0, 0, 0.339112, 14.8401, 21.9643, -36.617)
+
+[node name="killblock3" parent="." instance=ExtResource("5_gs4fi")]
+transform = Transform3D(7.78435, 0, 0, 0, 6.02454, 0, 0, 0, 0.339112, 14.8401, 21.9643, -44.895)

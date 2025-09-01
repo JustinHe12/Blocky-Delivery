@@ -22,15 +22,18 @@ var pitch = 0
 @onready var camera_pivot : Node3D = $CameraPivot
 
 #Where the player respawns everytime they die
-var StartPosition = Vector3(0,15,0)
+var StartPosition = Vector3(0,10,0)
 var doublejump = 0
 
 #variables
 
 
 func jump():
-	
 	velocity.y = jump_velocity
+
+
+func respawn():
+	position = StartPosition
 
 
 func _physics_process(delta):
@@ -42,7 +45,7 @@ func _physics_process(delta):
 	
 	#If the player falls below a certain ranges, they will be respawned
 	if position.y < -15:
-		position = StartPosition
+		respawn()
 	
 	# Handle Jump and double jump.
 
@@ -56,6 +59,7 @@ func _physics_process(delta):
 	else:
 		if doublejump == 0:
 			if Input.is_action_just_pressed("ui_accept"):
+				
 				doublejump = 1 
 				jump()
 				

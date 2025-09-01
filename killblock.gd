@@ -3,6 +3,8 @@ extends Area3D
 @onready var Reset = get_node(reset)
 
 func _on_body_entered(body):
-	print(body.name)
+	if body.name == "Player":
+		#tell the body to respawn
+		body.respawn()
 	
 		
