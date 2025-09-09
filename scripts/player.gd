@@ -25,15 +25,23 @@ var pitch = 0
 var StartPosition = Vector3(0,10,0)
 var doublejump = 0
 
+
 #variables
 
+#functions 
 
+
+	
+	
 func jump():
 	velocity.y = jump_velocity
 
 
 func respawn():
 	position = StartPosition
+
+func NEW(a):
+	StartPosition = a
 
 
 func _physics_process(delta):

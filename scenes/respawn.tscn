@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpbicacpro4r7"]
+
+[ext_resource type="Script" path="res://scripts/area_3d.gd" id="1_3xbyc"]
+[ext_resource type="Texture2D" uid="uid://cqjx5h6ykb8un" path="res://addons/kenney_prototype_textures/purple/texture_02.png" id="2_yotyl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t0bcp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_csgow"]
+albedo_texture = ExtResource("2_yotyl")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_3xbyc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_t0bcp")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.462402, 0)
+size = Vector3(1, 0.0751953, 1)
+material = SubResource("StandardMaterial3D_csgow")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

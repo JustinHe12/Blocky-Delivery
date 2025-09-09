@@ -7,4 +7,3 @@ func _on_body_entered(body):
 		#tell the body to respawn
 		body.respawn()
 	
-		

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dy26xc485fhld"]
 
-[ext_resource type="Script" path="res://addons/srcoder_fps_controller/assets/scripts/player.gd" id="1_f6swd"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_f6swd"]
 [ext_resource type="Material" uid="uid://xksju4002ur7" path="res://addons/srcoder_fps_controller/assets/materials/white.material" id="2_fs15m"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ntw7j"]

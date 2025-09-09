@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cv5c1ic7aoxe8"]
+[gd_scene load_steps=9 format=3 uid="uid://cv5c1ic7aoxe8"]
 
 [ext_resource type="Material" uid="uid://cdnbyynlgoq4c" path="res://materials/grid1.material" id="1_dbujn"]
 [ext_resource type="PackedScene" uid="uid://dy26xc485fhld" path="res://scenes/player.tscn" id="2_op18v"]
 [ext_resource type="PackedScene" uid="uid://xvirvni0l0oy" path="res://addons/srcoder_fps_controller/mouse_lock.tscn" id="3_afioo"]
+[ext_resource type="PackedScene" uid="uid://bpbicacpro4r7" path="res://scenes/respawn.tscn" id="4_trffq"]
+[ext_resource type="PackedScene" uid="uid://csy8rotcnemjv" path="res://scenes/portal.tscn" id="5_i8h7c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qjfgd"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -161,7 +163,7 @@ use_collision = true
 size = Vector3(5, 1, 3)
 
 [node name="Player" parent="." instance=ExtResource("2_op18v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0536314, 2.32518, 0.0273578)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0536314, 2.32518, -60.296)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_g4yij")
@@ -171,3 +173,10 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="MouseLock" parent="." instance=ExtResource("3_afioo")]
+
+[node name="Node3D" parent="." instance=ExtResource("4_trffq")]
+transform = Transform3D(3.47295, 0, 0, 0, 0.950609, 0, 0, 0, 2.05922, 0.0104287, 1.10427, -35.1427)
+
+[node name="portal" parent="." instance=ExtResource("5_i8h7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.684842, 1.52603, -63.0986)
+next_level = "level_4"
