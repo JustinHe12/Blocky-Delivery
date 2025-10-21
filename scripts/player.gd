@@ -39,9 +39,13 @@ func jump():
 
 func respawn():
 	position = StartPosition
+	velocity.x = 0
+	velocity.z = 0
+	velocity.y = 0
 
-func NEW(a):
-	StartPosition = a
+func NEW(new_respawn):
+	StartPosition = Vector3(new_respawn.x,new_respawn.y + 5, new_respawn.z)
+	print(new_respawn.y)
 
 
 func _physics_process(delta):

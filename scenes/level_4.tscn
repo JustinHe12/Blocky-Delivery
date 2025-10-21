@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cr43ybt3rh186"]
+[gd_scene load_steps=13 format=3 uid="uid://cr43ybt3rh186"]
 
 [ext_resource type="Material" uid="uid://cdnbyynlgoq4c" path="res://materials/grid1.material" id="1_aokpd"]
 [ext_resource type="PackedScene" uid="uid://78tx4krbnsyv" path="res://scenes/killblock.tscn" id="2_rvthj"]
 [ext_resource type="PackedScene" uid="uid://bbvxjc0k7xfqc" path="res://scenes/path_3d.tscn" id="3_cwm1x"]
 [ext_resource type="PackedScene" uid="uid://dy26xc485fhld" path="res://scenes/player.tscn" id="4_klt4s"]
 [ext_resource type="PackedScene" uid="uid://xvirvni0l0oy" path="res://addons/srcoder_fps_controller/mouse_lock.tscn" id="5_fen6t"]
+[ext_resource type="PackedScene" uid="uid://bpbicacpro4r7" path="res://scenes/respawn.tscn" id="6_i8xd1"]
+[ext_resource type="PackedScene" uid="uid://csy8rotcnemjv" path="res://scenes/portal.tscn" id="7_0v8du"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1vu0y"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -21,19 +23,20 @@ glow_enabled = true
 
 [sub_resource type="Curve3D" id="Curve3D_cm68e"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_guhwk"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [node name="level_4" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_klt4s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
@@ -47,27 +50,54 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hdu3b")
 
-[node name="Map" type="Node3D" parent="."]
+[node name="Section 1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.62622, 0, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4, -0.5, 9.53674e-07, 0.7)
-material_override = ExtResource("1_aokpd")
-use_collision = true
-size = Vector3(10, 1, 8)
+[node name="Moving_Block2" parent="Section 1" instance=ExtResource("3_cwm1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 0)
+curve = SubResource("Curve3D_cm68e")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.96, 25.5, 1.90735e-06, 0.7)
+[node name="Moving_Block1" parent="Section 1" instance=ExtResource("3_cwm1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.423551, 1, 0)
+curve = SubResource("Curve3D_guhwk")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Section 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.96, 24.3473, 0, 0)
 material_override = ExtResource("1_aokpd")
 use_collision = true
 size = Vector3(7, 1, 5)
 
-[node name="Moving_Block2" parent="." instance=ExtResource("3_cwm1x")]
+[node name="CSGBox3D" type="CSGBox3D" parent="Section 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4, -6.54969, 0, 0)
+material_override = ExtResource("1_aokpd")
+use_collision = true
+size = Vector3(10, 1, 8)
+
+[node name="Respawn" parent="Section 1" instance=ExtResource("6_i8xd1")]
+transform = Transform3D(3.65097, 0, 0, 0, 1, 0, 0, 0, 5.58588, 24.5585, 1, 0)
+
+[node name="Section 2" type="Node3D" parent="."]
+
+[node name="Section 3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.278, 0, 0)
+
+[node name="Moving_Block2" parent="Section 3" instance=ExtResource("3_cwm1x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 0)
 curve = SubResource("Curve3D_cm68e")
 
-[node name="Moving_Block" parent="." instance=ExtResource("3_cwm1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="killblock" parent="Section 3" instance=ExtResource("2_rvthj")]
+transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 14, 2, 0)
+
+[node name="Moving_Block1" parent="Section 3" instance=ExtResource("3_cwm1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.423551, 1, 0)
 curve = SubResource("Curve3D_guhwk")
 
-[node name="killblock" parent="." instance=ExtResource("2_rvthj")]
-transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 14, 2, 0)
+[node name="CSGBox3D2" type="CSGBox3D" parent="Section 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.96, 24.3473, 0, 0)
+material_override = ExtResource("1_aokpd")
+use_collision = true
+size = Vector3(7, 1, 5)
+
+[node name="portal" parent="." instance=ExtResource("7_0v8du")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 62.1608, 1.45831, 0)
+next_level = "level_5"
